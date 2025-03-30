@@ -31,3 +31,4 @@ jobs:
           work-dir: ./ppinfra
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+          PULUMI_CLOUD_ENVIRONMENT: default/oidc-env
