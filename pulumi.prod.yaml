@@ -1,0 +1,11 @@
+name: pulumi.prod
+runtime: yaml
+
+config:
+  aws:region: us-east-1
+  pulumi:organization: Arjun-Bindhu-Suresh
+  pulumi:project: pulumi-static-site
+
+  pulumi:oidc:
+    aws:
+      roleArn: arn:aws:iam::445567116039:role/PulumiOIDCRole
