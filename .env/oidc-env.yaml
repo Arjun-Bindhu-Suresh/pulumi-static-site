@@ -2,11 +2,13 @@ name: oidc-env
 values:
   aws:
     login:
-      fn::open: aws-login
-      oidc:
-        duration: 1h
-        roleArn: arn:aws:iam::445567116039:role/PulumiOIDCRole
-        sessionName: pulumi-oidc-session
+      fn::open:
+        provider: aws-login
+        inputs:
+          oidc:
+            roleArn: arn:aws:iam::445567116039:role/PulumiOIDCRole
+            sessionName: pulumi-oidc-session
+            duration: 1h
     environmentVariables:
       AWS_ACCESS_KEY_ID: ${aws.login.accessKeyId}
       AWS_SECRET_ACCESS_KEY: ${aws.login.secretAccessKey}

@@ -95,3 +95,5 @@ export const originURL = pulumi.interpolate`http://${bucketWebsite.websiteEndpoi
 export const originHostname = bucketWebsite.websiteEndpoint;
 export const cdnURL = pulumi.interpolate`https://${cdn.domainName}`;
 export const cdnHostname = cdn.domainName;
+
+// Trigger deployment
