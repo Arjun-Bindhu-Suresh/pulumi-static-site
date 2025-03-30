@@ -1,0 +1,32 @@
+name: Pulumi Destroy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./ppinfra
+
+      - name: Pulumi Destroy
+        uses: pulumi/actions@v5
+        with:
+          command: destroy
+          stack-name: Arjun-Bindhu-Suresh/pulumi-static-site/dev
+          work-dir: ./ppinfra
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
