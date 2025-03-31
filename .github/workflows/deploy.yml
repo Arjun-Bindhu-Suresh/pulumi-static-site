@@ -32,7 +32,6 @@ jobs:
           command: up
           stack-name: dev
           work-dir: ./ppinfra
-          environment: default/oidc-env
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           PULUMI_ENVIRONMENT: default/oidc-env
