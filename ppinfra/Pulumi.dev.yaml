@@ -1,8 +1,6 @@
 config:
   aws:region: us-west-2
+  pulumi:environment: default/oidc-env
   myworkshop:errorDocument: error.html
   myworkshop:indexDocument: index.html
   myworkshop:path: ./www
-  pulumi:environment: default/oidc-env
-  myworkshop:config:
-    pulumi:environment: default/oidc-env
