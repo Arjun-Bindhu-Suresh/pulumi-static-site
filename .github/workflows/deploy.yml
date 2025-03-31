@@ -14,7 +14,7 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Node.js
