@@ -3,5 +3,4 @@ config:
   myworkshop:errorDocument: error.html
   myworkshop:indexDocument: index.html
   myworkshop:path: ./www
-  myworkshop:config:
-    pulumi:environment: default/oidc-env
+  pulumi:environment: default/oidc-env
