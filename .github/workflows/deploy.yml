@@ -2,8 +2,7 @@ name: Pulumi Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -15,7 +14,7 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -23,11 +22,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm install
         working-directory: ./ppinfra
 
-      - name: Pulumi Up (ESC + OIDC)
+      - name: Pulumi Up (OIDC)
         uses: pulumi/actions@v5
         with:
           command: up
